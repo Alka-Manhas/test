@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+       label 'test1'
+    }
+    stages{
+        stage("hello"){
+            steps{
+                script{
+                    
+                    def exec = """
+                    
+                    cd /home/ec2-user/archive
+                    
+                    
+                    """
+                    sh exec
+                
+            }
+                
+            }
+            
+        }
+        stage("two"){
+            
+            steps{
+            print "This is stage two"
+                    
+        }
+        }
+    }
+}
